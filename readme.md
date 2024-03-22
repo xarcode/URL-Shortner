@@ -27,40 +27,26 @@ npm start
 ### Generate Short URL
 
 - **Method:** POST
-- **Path:** `/`
+- **Path:** `/api/shorten`
 - **Description:** Generates a new short URL for a given long URL.
 - **Request Body:**
   - `longUrl` (string): The long URL to be shortened.
 - **Response:**
   - `shortUrl` (string): The generated short URL.
 
-Example:
+### Generate Short URL with custom url
 
-```
-curl -X POST http://localhost:3000/ -H "Content-Type: application/json" -d '{"longUrl": "https://example.com"}'
-```
-
-### Get Analytics for Short URL
-
-- **Method:** GET
-- **Path:** `/analytics/:shortId`
-- **Description:** Retrieves analytics data for a given short URL.
-- **Parameters:**
-  - `shortId` (string): The unique identifier of the short URL.
+- **Method:** POST
+- **Path:** `/api/shorten/custom`
+- **Description:** Generates a new short URL for a given long URL.
+- **Request Body:**
+  - `longUrl` (string): The long URL to be shortened.
+  - `customurl` (string): The custom url to be shown and shared
 - **Response:**
-  - Analytics data including total visits, unique visits, etc.
+  - `shortUrl` (string): The generated short URL.
 
-Example:
-
-```
-curl http://localhost:3000/analytics/abc123
-```
 
 ## Dependencies
 
 - express
 
-```
-
-Make sure to replace `<repository-url>` with the actual URL of your Git repository. You can expand this README further by adding information about the application's architecture, configuration, deployment instructions, etc., as needed.
-```
